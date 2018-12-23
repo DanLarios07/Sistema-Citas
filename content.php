@@ -36,6 +36,10 @@ else {
 		include "modulos/mod_citas/form.php";
 	}
 
+	elseif ($_GET['module'] == 'reporte_2') {
+		include "modulos/reporte_2/view.php";
+	}
+
 	elseif ($_GET['module'] == 'stock_reporte') {
 		include "modulos/stock_reporte/view.php";
 	}
