@@ -219,7 +219,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">  
                 <label class="col-sm-2 control-label">Empleado</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="codigo_empleado" data-placeholder="<?php echo $data['codigo_cliente']; ?>" onchange="tampil_obat(this)" autocomplete="off" required>
+                  <select class="chosen-select" name="codigo_empleado" data-placeholder="-- SELECIONE UN EMPLEADO --" onchange="tampil_obat(this)" autocomplete="off" required>
                     <option value=""></option>
 
                     <?php
