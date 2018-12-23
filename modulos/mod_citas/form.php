@@ -142,8 +142,10 @@ if ($_GET['form']=='add') { ?>
 elseif ($_GET['form']=='edit') { 
   if (isset($_GET['id'])) {
 
-      $query = mysqli_query($mysqli, "SELECT codigo_cita,fecha,codigo_cliente,codigo_empleado,observacion,created_user,estado_cita,servicio
-                                      FROM citas 
+      $query = mysqli_query($mysqli, "SELECT c.codigo_cita, c.fecha, c.codigo_cliente, c.codigo_empleado, c.observacion, c.created_user, c.estado_cita, 
+                                            e.primerNombre_e, e.primerApellido_e, e.segundoApellido_e, c.servicio, c.hora
+                                      FROM citas c
+                                      INNER JOIN empleados AS e ON e.codigo_empleado = c.codigo_empleado
                                       WHERE codigo_cita = '$_GET[id]'") 
                                       or die('error: '.mysqli_error($mysqli));
       $data  = mysqli_fetch_assoc($query);
@@ -181,6 +183,15 @@ elseif ($_GET['form']=='edit') {
                 <label class="col-sm-2 control-label">Fecha</label>
                 <div class="col-sm-5">
                   <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="fecha_a" autocomplete="off" value="<?php echo date("d-m-Y"); ?>" required>
+                </div>
+              </div>
+
+              <hr>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Hora</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control date-picker" name="hora_a" autocomplete="off" value="<?php echo date("hh:mm:ss"); ?>" required>
                 </div>
               </div>
 
