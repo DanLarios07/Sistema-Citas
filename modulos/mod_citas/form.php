@@ -191,7 +191,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Hora</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control date-picker" name="hora_a" autocomplete="off" value="<?php echo date("hh:mm:ss"); ?>" required>
+                  <input type="time" class="form-control time" name="hora" autocomplete="off" value="<?php echo $data['hora']; ?>" required>
                 </div>
               </div>
 
@@ -219,7 +219,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">  
                 <label class="col-sm-2 control-label">Empleado</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="codigo_empleado" data-placeholder="-- SELECIONE UN EMPLEADO --" onchange="tampil_obat(this)" autocomplete="off" required>
+                  <select class="chosen-select" name="codigo_empleado" data-placeholder="-- SELECIONE UN EMPLEADO --" onchange="tampil_obat(this)" autocomplete="off"  required>
                     <option value=""></option>
 
                     <?php
@@ -243,7 +243,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Estado de Cita</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="estado_cita" data-placeholder="<?php echo $data['estado_cita']; ?>" required>
+                  <select class="chosen-select" name="estado_cita" value="<?php echo $data['estado_cita']; ?>" data-placeholder="-- SELECCIONE ESTADO DE CITA --" required>
                     <option value=""></option>
                     <option value="Pendiente">Cita Pendiente</option>
                     <option value="Atendida">Cita Atendida</option>
@@ -255,7 +255,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Servicio</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" id="jumlah_masuk" name="servicio" autocomplete="off" required>
+                  <input type="text" class="form-control" id="jumlah_masuk" name="servicio" autocomplete="off" value="<?php echo $data['servicio']; ?>" required>
                 </div>
               </div>
 
