@@ -25,10 +25,11 @@ else {
             $created_user    = $_SESSION['id_user'];
             $estado_cita= mysqli_real_escape_string($mysqli, trim($_POST['estado_cita']));
             $servicio   = mysqli_real_escape_string($mysqli, trim($_POST['servicio']));
+            $hora   = mysqli_real_escape_string($mysqli, trim($_POST['hora']));
 
           
             $query = mysqli_query($mysqli, "INSERT INTO citas(codigo_cita,fecha,codigo_cliente,codigo_empleado,observacion,created_user,estado_cita,servicio) 
-                                            VALUES('$codigo_cita','$fecha_a','$codigo_cliente','$codigo_empleado','$observacion','$created_user','$estado_cita','$servicio')")
+                                            VALUES('$codigo_cita','$fecha_a','$codigo_cliente','$codigo_empleado','$observacion','$created_user','$estado_cita','$servicio', '$hora')")
                                             or die('Error: '.mysqli_error($mysqli));    
 
         
@@ -52,6 +53,7 @@ else {
             $observacion   = mysqli_real_escape_string($mysqli, trim($_POST['observacion']));
             $estado_cita= mysqli_real_escape_string($mysqli, trim($_POST['estado_cita']));
             $servicio   = mysqli_real_escape_string($mysqli, trim($_POST['servicio']));
+            $hora   = mysqli_real_escape_string($mysqli, trim($_POST['hora']));
 
 
                 $query = mysqli_query($mysqli, "UPDATE citas SET codigo_cita       = '$codigo_cita',
@@ -60,7 +62,8 @@ else {
                                                                     codigo_empleado       = '$codigo_empleado',
                                                                     observacion          = '$observacion',
                                                                     estado_cita     = '$estado_cita',
-                                                                    servicio        = '$servicio'
+                                                                    servicio        = '$servicio',
+                                                                    hora            = '$hora'
                                                               WHERE codigo_cita       = '$codigo_cita'")
                                                 or die('error: '.mysqli_error($mysqli));
 
