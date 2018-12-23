@@ -75,7 +75,7 @@ else {
 
     elseif ($_GET['act']=='delete') {
         if (isset($_GET['id'])) {
-            $codigo_cliente = $_GET['id'];
+            $codigo_cita = $_GET['id'];
       
             $query = mysqli_query($mysqli, "DELETE FROM citas WHERE codigo_cita='$codigo_cita'")
                                             or die('error '.mysqli_error($mysqli));
