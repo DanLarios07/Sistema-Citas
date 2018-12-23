@@ -23,10 +23,13 @@ $tgl_akhir = $explode[2]."-".$explode[1]."-".$explode[0];
 if (isset($_GET['tgl_awal'])) {
     $no    = 1;
     
-    $query = mysqli_query($mysqli, "SELECT a.tipo_transaccion, a.codigo_transaccion,a.fecha,a.codigo,a.numero,b.codigo,b.nombre,b.unidad
-                                    FROM transaccion_medicamentos as a INNER JOIN medicamentos as b ON a.codigo=b.codigo
-                                    WHERE a.fecha BETWEEN '$tgl_awal' AND '$tgl_akhir'
-                                    ORDER BY a.codigo_transaccion ASC") 
+    $query = mysqli_query($mysqli, "SELECT b.estado_cita, b.codigo_codigo_cita,b.fecha,b.codigo_cliente,b.codigo_empleado,b.observacion,b.servicio,
+                                    a.codigo_cliente,a.primerNombre,a.segundoNombre,a.primerApellido,a.segundoApellido,a.telefono,
+                                    c.codigo_empleado,c.primerNombre_e,c.segundoNombre_e,c.primerApellido_e,c.segundoApellido_e,c.telefono_e,
+                                    FROM clientes as a INNER JOIN citas as b ON a.codigo_clientes=b.codigo_clientes
+                                    INNER JOIN empleados as c ON b.codigo_empleados = c.codigo_empleados
+                                    WHERE b.fecha BETWEEN '$tgl_awal' AND '$tgl_akhir'
+                                    ORDER BY b.codigo_citas ASC") 
                                     or die('error '.mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
@@ -34,12 +37,12 @@ if (isset($_GET['tgl_awal'])) {
 <html xmlns="http://www.w3.org/1999/xhtml"> 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>REPORTE DE MEDICAMENTOS</title>
+        <title>REPORTE DE CITAS</title>
         <link rel="stylesheet" type="text/css" href="../../assets/css/laporan.css" />
     </head>
     <body>
         <div id="title">
-           DATOS DE REGISTROS DE MEDICAMENTOS
+           DATOS DE REGISTROS DE CLIENTES
         </div>
     <?php  
     if ($tgl_awal==$tgl_akhir) { ?>
@@ -61,13 +64,13 @@ if (isset($_GET['tgl_awal'])) {
                 <thead style="background:#e8ecee">
                     <tr class="tr-title">
                         <th height="20" align="center" valign="middle"><small>NO.</small></th>
-                        <th height="20" align="center" valign="middle"><small>TRANSACCION No </small></th>
+                        <th height="20" align="center" valign="middle"><small> </small></th>
                         <th height="20" align="center" valign="middle"><small>FECHA</small></th>
-                        <th height="20" align="center" valign="middle"><small>CÓDIGO </small></th>
-                        <th height="20" align="center" valign="middle"><small>NOMBRE DE MEDICAMENTO</small></th>
-                        <th height="20" align="center" valign="middle"><small>TIPO </small></th>
-						<th height="20" align="center" valign="middle"><small>CANT. </small></th>
-                        <th height="20" align="center" valign="middle"><small>UNIDAD</small></th>
+                        <th height="20" align="center" valign="middle"><small>Cï¿½DIGO </small></th>
+                        <th height="20" align="center" valign="middle"><small>NOMBRE CLIENTE</small></th>
+                        <th height="20" align="center" valign="middle"><small>NOMBRE EMPLEADO </small></th>
+						<th height="20" align="center" valign="middle"><small>SERVICIO </small></th>
+                        <th height="20" align="center" valign="middle"><small>OBSERVACION</small></th>
                     </tr>
                 </thead>
                 <tbody>

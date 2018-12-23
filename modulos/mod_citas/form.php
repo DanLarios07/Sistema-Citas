@@ -113,6 +113,13 @@ if ($_GET['form']=='add') { ?>
                 </div>
               </div>
 
+              
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Servicio</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="jumlah_masuk" name="servicio" autocomplete="off" required>
+                </div>
+              </div>
 
             </div><!-- /.box body -->
 
