@@ -53,12 +53,12 @@
             <thead>
               <tr>
                 <th class="center">No.</th>
-                <th class="center">Codigo de Cita</th>
                 <th class="center">Fecha</th>
                 <th class="center">Nombre Cliente</th>
                 <th class="center"># Telefono Cliente</th>
                 <th class="center">Nombre Empleado</th>
 				        <th class="center">Observacion</th>
+                <th class="center">Servicio</th>
                 <th class="center">Estado De Cita</th>
                 <th class="center">opciones</th>
               </tr>
@@ -68,7 +68,7 @@
             <?php  
             $no = 1;
            
-            $query = mysqli_query($mysqli, "SELECT a.estado_cita, a.codigo_cita,a.fecha,a.codigo_cliente,a.observacion,b.codigo_cliente,b.primerNombre,b.segundoNombre,b.primerApellido,
+            $query = mysqli_query($mysqli, "SELECT a.estado_cita, a.codigo_cita,a.fecha,a.codigo_cliente,a.observacion,a.servicio,b.codigo_cliente,b.primerNombre,b.segundoNombre,b.primerApellido,
                                             b.segundoApellido,b.telefono ,c.codigo_empleado,c.primerNombre_e,c.segundoNombre_e,c.primerApellido_e,c.segundoApellido_e
                                             FROM clientes as b INNER JOIN citas as a ON b.codigo_cliente=a.codigo_cliente
                                             INNER JOIN empleados as c ON a.codigo_empleado=c.codigo_empleado ORDER BY codigo_cita DESC")
@@ -83,12 +83,12 @@
              
               echo "<tr>
                       <td width='15' class='center'>$no</td>
-                      <td width='120' class='center'>$data[codigo_cita]</td>
                       <td width='80' class='center'>$fecha</td>
                       <td width='200' class='center'>$data[primerNombre] $data[segundoNombre] $data[primerApellido] $data[segundoApellido]</td>
                       <td width='80' class='center'>$data[telefono]</td>
                       <td width='200'>$data[primerNombre_e] $data[segundoNombre_e] $data[primerApellido_e] $data[segundoApellido_e]</td>
                       <td width='100' align='right'>$data[observacion]</td>
+                      <td width='120' class='center'>$data[servicio]</td>
                       <td width='80' class='center'>$data[estado_cita]</td>
                       <td class='center' width='80'>
                         <div>

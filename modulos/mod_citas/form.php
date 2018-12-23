@@ -142,7 +142,7 @@ if ($_GET['form']=='add') { ?>
 elseif ($_GET['form']=='edit') { 
   if (isset($_GET['id'])) {
 
-      $query = mysqli_query($mysqli, "SELECT codigo_cita,fecha,codigo_cliente,codigo_empleado,observacion,created_user,estado_cita
+      $query = mysqli_query($mysqli, "SELECT codigo_cita,fecha,codigo_cliente,codigo_empleado,observacion,created_user,estado_cita,servicio
                                       FROM citas 
                                       WHERE codigo_cita = '$_GET[id]'") 
                                       or die('error: '.mysqli_error($mysqli));
@@ -237,6 +237,14 @@ elseif ($_GET['form']=='edit') {
                     <option value="Pendiente">Cita Pendiente</option>
                     <option value="Atendida">Cita Atendida</option>
                   </select>
+                </div>
+              </div>
+
+                            
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Servicio</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="jumlah_masuk" name="servicio" autocomplete="off" required>
                 </div>
               </div>
 
