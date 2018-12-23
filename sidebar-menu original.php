@@ -60,29 +60,14 @@ if ($_GET["module"]=="mod_empleados" || $_GET["module"]=="form_mod_empleados") {
   <?php
   }
 
-
-  if ($_GET["module"]=="transaccion_medicinas" || $_GET["module"]=="form_transaccion_medicinas") { ?>
-    <li class="active">
-      <a href="?module=transaccion_medicinas"><i class="fa fa-clone"></i> proto citas </a>
-      </li>
-  <?php
-  }
-
-  else { ?>
-    <li>
-      <a href="?module=transaccion_medicinas"><i class="fa fa-clone"></i> proto citas </a>
-      </li>
-  <?php
-  }
-
-	if ($_GET["module"]=="inventario") { ?>
+	if ($_GET["module"]=="reporte_2") { ?>
 		<li class="active treeview">
           	<a href="javascript:void(0);">
             	<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
           	</a>
       		<ul class="treeview-menu">
-        		<li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i> Stock de Medicamentos </a></li>
-        		<li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Registro de medicamentos</a></li>
+        		<li class="active"><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
+        		<li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas</a></li>
       		</ul>
     	</li>
     <?php
@@ -94,8 +79,8 @@ if ($_GET["module"]=="mod_empleados" || $_GET["module"]=="form_mod_empleados") {
             	<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
           	</a>
       		<ul class="treeview-menu">
-        		<li><a href="?module=inventario"><i class="fa fa-circle-o"></i> Stock de Medicamentos </a></li>
-        		<li class="active"><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Registro de medicamentos </a></li>
+        		<li><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
+        		<li class="active"><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
       		</ul>
     	</li>
     <?php
@@ -107,8 +92,8 @@ if ($_GET["module"]=="mod_empleados" || $_GET["module"]=="form_mod_empleados") {
             	<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
           	</a>
       		<ul class="treeview-menu">
-        		<li><a href="?module=stock_inventario"><i class="fa fa-circle-o"></i> Stock de Medicamentos </a></li>
-        		<li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Registro de medicamentos </a></li>
+        		<li><a href="?module=stock_reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
+        		<li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
       		</ul>
     	</li>
     <?php
@@ -171,14 +156,14 @@ elseif ($_SESSION['permisos_acceso']=='Empleado') { ?>
 	}
 
 
-  if ($_GET["module"]=="inventario") { ?>
+  if ($_GET["module"]=="reporte_2") { ?>
     <li class="active treeview">
             <a href="javascript:void(0);">
               <i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i> Stock de Medicamentos</a></li>
-            <li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Registro de medicamentos </a></li>
+            <li class="active"><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes</a></li>
+            <li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
           </ul>
       </li>
     <?php
@@ -189,8 +174,8 @@ elseif ($_SESSION['permisos_acceso']=='Empleado') { ?>
               <i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
           <ul class="treeview-menu">
-            <li><a href="?module=inventario"><i class="fa fa-circle-o"></i> Stock de Medicamentos </a></li>
-            <li class="active"><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Registro de medicamentos </a></li>
+            <li><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
+            <li class="active"><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
           </ul>
       </li>
     <?php
@@ -201,8 +186,8 @@ elseif ($_SESSION['permisos_acceso']=='Empleado') { ?>
               <i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
           <ul class="treeview-menu">
-            <li><a href="?module=inventario"><i class="fa fa-circle-o"></i>  Stock de Medicamentos </a></li>
-            <li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Registro de medicamentos </a></li>
+            <li><a href="?module=reporte_2"><i class="fa fa-circle-o"></i>  Reporte de Clientes </a></li>
+            <li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
           </ul>
       </li>
     <?php
@@ -299,14 +284,14 @@ if ($_SESSION['permisos_acceso']=='Gerente') { ?>
   <?php
   }
 
-  if ($_GET["module"]=="inventario") { ?>
+  if ($_GET["module"]=="reporte_2") { ?>
     <li class="active treeview">
             <a href="javascript:void(0);">
               <i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="?module=inventario"><i class="fa fa-circle-o"></i> Stock de Medicamentos </a></li>
-            <li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Registro de medicamentos </a></li>
+            <li class="active"><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
+            <li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
           </ul>
       </li>
     <?php
@@ -317,8 +302,8 @@ if ($_SESSION['permisos_acceso']=='Gerente') { ?>
               <i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
           <ul class="treeview-menu">
-            <li><a href="?module=inventario"><i class="fa fa-circle-o"></i> Stock de Medicamentos </a></li>
-            <li class="active"><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Registro de medicamentos </a></li>
+            <li><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
+            <li class="active"><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
           </ul>
       </li>
     <?php
@@ -329,8 +314,8 @@ if ($_SESSION['permisos_acceso']=='Gerente') { ?>
               <i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
           <ul class="treeview-menu">
-            <li><a href="?module=stock_inventario"><i class="fa fa-circle-o"></i> Stock de Medicamentos </a></li>
-            <li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Registro de medicamentos </a></li>
+            <li><a href="?module=stock_reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
+            <li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
           </ul>
       </li>
     <?php

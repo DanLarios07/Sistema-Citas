@@ -82,7 +82,7 @@ session_start();
       
       <header class="main-header">
         <!-- Logo -->
-        <a href="?module=beranda" class="logo">
+        <a href="?module=start" class="logo">
           <img style="margin-top:-15px;margin-right:5px" src="assets/img/logo-blue.png" alt="Logo"> 
           <span style="font-size:20px">LOGO</span>
         </a>

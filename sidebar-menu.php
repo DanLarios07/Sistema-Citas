@@ -60,26 +60,13 @@ if ($_SESSION['permisos_acceso']=='Super Admin') { ?>
   <?php
   }
 
-  if ($_GET["module"]=="transaccion_medicinas" || $_GET["module"]=="form_transaccion_medicinas") { ?>
-    <li class="active">
-      <a href="?module=transaccion_medicinas"><i class="fa fa-clone"></i> Registro de Citas </a>
-      </li>
-  <?php
-  }
-
-  else { ?>
-    <li>
-      <a href="?module=transaccion_medicinas"><i class="fa fa-clone"></i> Proto Citas </a>
-      </li>
-  <?php
-  }
-
-	if ($_GET["module"]=="inventario") { ?>
+	if ($_GET["module"]=="reporte_2") { ?>
 		<li class="active treeview">
           	<a href="javascript:void(0);">
             	<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
           	</a>
       		<ul class="treeview-menu">
+        		<li class="active"><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
         		<li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas</a></li>
       		</ul>
     	</li>
@@ -92,25 +79,12 @@ if ($_SESSION['permisos_acceso']=='Super Admin') { ?>
             	<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
           	</a>
       		<ul class="treeview-menu">
+        		<li><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
         		<li class="active"><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
-
       		</ul>
     	</li>
     <?php
 	}
-
-  elseif ($_GET["module"]=="venta") { ?>
-    <li class="active treeview">
-            <a href="javascript:void(0);">
-              <i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
-            </a>
-          <ul class="treeview-menu">
-            <li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas</a></li>
-
-          </ul>
-      </li>
-    <?php
-  }
 
 	else { ?>
 		<li class="treeview">
@@ -118,6 +92,7 @@ if ($_SESSION['permisos_acceso']=='Super Admin') { ?>
             	<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
           	</a>
       		<ul class="treeview-menu">
+        		<li><a href="?module=stock_reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
         		<li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
       		</ul>
     	</li>
@@ -181,39 +156,44 @@ elseif ($_SESSION['permisos_acceso']=='Empleado') { ?>
 	}
 
 
-  if ($_GET["module"]=="inventario") { ?>
-    <li class="active treeview">
-            <a href="javascript:void(0);">
-              <i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
-            </a>
-          <ul class="treeview-menu">
-            <li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
-          </ul>
-      </li>
+  if ($_GET["module"]=="reporte_2") { ?>
+		<li class="active treeview">
+          	<a href="javascript:void(0);">
+            	<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
+          	</a>
+      		<ul class="treeview-menu">
+        		<li class="active"><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
+        		<li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas</a></li>
+      		</ul>
+    	</li>
     <?php
-  }
-  elseif ($_GET["module"]=="stock_reporte") { ?>
-    <li class="active treeview">
-            <a href="javascript:void(0);">
-              <i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
-            </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
-          </ul>
-      </li>
+	}
+
+	elseif ($_GET["module"]=="stock_reporte") { ?>
+		<li class="active treeview">
+          	<a href="javascript:void(0);">
+            	<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
+          	</a>
+      		<ul class="treeview-menu">
+        		<li><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
+        		<li class="active"><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
+      		</ul>
+    	</li>
     <?php
-  }
-  else { ?>
-    <li class="treeview">
-            <a href="javascript:void(0);">
-              <i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
-            </a>
-          <ul class="treeview-menu">
-            <li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
-          </ul>
-      </li>
+	}
+
+	else { ?>
+		<li class="treeview">
+          	<a href="javascript:void(0);">
+            	<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
+          	</a>
+      		<ul class="treeview-menu">
+        		<li><a href="?module=stock_reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
+        		<li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
+      		</ul>
+    	</li>
     <?php
-  }
+	}
 
 	if ($_GET["module"]=="password") { ?>
 		<li class="active">
@@ -291,52 +271,44 @@ if ($_SESSION['permisos_acceso']=='Gerente') { ?>
   <?php
   }
 
-  if ($_GET["module"]=="transaccion_medicinas" || $_GET["module"]=="form_transaccion_medicinas") { ?>
-    <li class="active">
-      <a href="?module=transaccion_medicinas"><i class="fa fa-clone"></i> Proto Citas </a>
-      </li>
-  <?php
-  }
-  else { ?>
-    <li>
-      <a href="?module=transaccion_medicinas"><i class="fa fa-clone"></i> Proto Citas </a>
-      </li>
-  <?php
-  }
+  if ($_GET["module"]=="reporte_2") { ?>
+		<li class="active treeview">
+          	<a href="javascript:void(0);">
+            	<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
+          	</a>
+      		<ul class="treeview-menu">
+        		<li class="active"><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
+        		<li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas</a></li>
+      		</ul>
+    	</li>
+    <?php
+	}
 
-  if ($_GET["module"]=="inventario") { ?>
-    <li class="active treeview">
-            <a href="javascript:void(0);">
-              <i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
-            </a>
-          <ul class="treeview-menu">
-            <li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
-          </ul>
-      </li>
+	elseif ($_GET["module"]=="stock_reporte") { ?>
+		<li class="active treeview">
+          	<a href="javascript:void(0);">
+            	<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
+          	</a>
+      		<ul class="treeview-menu">
+        		<li><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
+        		<li class="active"><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
+      		</ul>
+    	</li>
     <?php
-  }
-  elseif ($_GET["module"]=="stock_reporte") { ?>
-    <li class="active treeview">
-            <a href="javascript:void(0);">
-              <i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
-            </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
-          </ul>
-      </li>
+	}
+
+	else { ?>
+		<li class="treeview">
+          	<a href="javascript:void(0);">
+            	<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
+          	</a>
+      		<ul class="treeview-menu">
+        		<li><a href="?module=stock_reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
+        		<li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
+      		</ul>
+    	</li>
     <?php
-  }
-  else { ?>
-    <li class="treeview">
-            <a href="javascript:void(0);">
-              <i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
-            </a>
-          <ul class="treeview-menu">
-            <li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
-          </ul>
-      </li>
-    <?php
-  }
+	}
 
 	if ($_GET["module"]=="password") { ?>
 		<li class="active">
