@@ -23,13 +23,12 @@ $tgl_akhir = $explode[2]."-".$explode[1]."-".$explode[0];
 if (isset($_GET['tgl_awal'])) {
     $no    = 1;
     
-    $query = mysqli_query($mysqli, "SELECT b.estado_cita, b.codigo_codigo_cita,b.fecha,b.codigo_cliente,b.codigo_empleado,b.observacion,b.servicio,
-                                    a.codigo_cliente,a.primerNombre,a.segundoNombre,a.primerApellido,a.segundoApellido,a.telefono,
-                                    c.codigo_empleado,c.primerNombre_e,c.segundoNombre_e,c.primerApellido_e,c.segundoApellido_e,c.telefono_e,
-                                    FROM clientes as a INNER JOIN citas as b ON a.codigo_clientes=b.codigo_clientes
-                                    INNER JOIN empleados as c ON b.codigo_empleados = c.codigo_empleados
-                                    WHERE b.fecha BETWEEN '$tgl_awal' AND '$tgl_akhir'
-                                    ORDER BY b.codigo_citas ASC") 
+    $query = mysqli_query($mysqli, "SELECT a.estado_cita, a.codigo_cita,a.fecha,a.codigo_cliente,a.observacion,a.servicio,a.hora,b.codigo_cliente,b.primerNombre,b.segundoNombre,b.primerApellido,
+                                            b.segundoApellido ,c.codigo_empleado,c.primerNombre_e,c.segundoNombre_e,c.primerApellido_e,c.segundoApellido_e
+                                            FROM clientes as b INNER JOIN citas as a ON b.codigo_cliente=a.codigo_cliente
+                                            INNER JOIN empleados as c ON a.codigo_empleado=c.codigo_empleado
+                                    WHERE a.fecha BETWEEN '$tgl_awal' AND '$tgl_akhir'
+                                    ORDER BY a.codigo_cita ASC") 
                                     or die('error '.mysqli_error($mysqli));
     $count  = mysqli_num_rows($query);
 }
@@ -42,7 +41,7 @@ if (isset($_GET['tgl_awal'])) {
     </head>
     <body>
         <div id="title">
-           DATOS DE REGISTROS DE CLIENTES
+           DATOS DE REGISTROS DE CITAS
         </div>
     <?php  
     if ($tgl_awal==$tgl_akhir) { ?>
@@ -64,27 +63,26 @@ if (isset($_GET['tgl_awal'])) {
                 <thead style="background:#e8ecee">
                     <tr class="tr-title">
                         <th height="20" align="center" valign="middle"><small>NO.</small></th>
-                        <th height="20" align="center" valign="middle"><small> </small></th>
-                        <th height="20" align="center" valign="middle"><small>FECHA</small></th>
-                        <th height="20" align="center" valign="middle"><small>C�DIGO </small></th>
+                        <th height="20" align="center" valign="middle"><small>FECHA </small></th>
                         <th height="20" align="center" valign="middle"><small>NOMBRE CLIENTE</small></th>
-                        <th height="20" align="center" valign="middle"><small>NOMBRE EMPLEADO </small></th>
-						<th height="20" align="center" valign="middle"><small>SERVICIO </small></th>
+                        <th height="20" align="center" valign="middle"><small>SERVICIO </small></th>
                         <th height="20" align="center" valign="middle"><small>OBSERVACION</small></th>
+                        <th height="20" align="center" valign="middle"><small>NOMBRE EMPLEADO </small></th>
+						<th height="20" align="center" valign="middle"><small>HORA</small></th>
                     </tr>
                 </thead>
                 <tbody>
 <?php
     
     if($count == 0) {
-        echo "  <tr>
+        echo "  
+                <tr>
                     <td width='40' height='13' align='center' valign='middle'></td>
+                    <td width='80' height='13' align='center' valign='middle'></td>
                     <td width='120' height='13' align='center' valign='middle'></td>
-                    <td width='80' height='13' align='center' valign='middle'></td>
-                    <td width='80' height='13' align='center' valign='middle'></td>
-                    <td style='padding-left:5px;' width='155' height='13' valign='middle'></td>
-					<td style='padding-left:5px;' width='50' height='13' valign='middle'></td>
-                    <td style='padding-right:10px;' width='50' height='13' align='right' valign='middle'></td>
+                    <td width='130' height='13' valign='middle'></td>
+					<td width='120' height='13' valign='middle'></td>
+                    <td width='120' height='13' align='center' valign='middle'></td>
                     <td width='80' height='13' align='center' valign='middle'></td>
                 </tr>";
     }
@@ -98,13 +96,12 @@ if (isset($_GET['tgl_awal'])) {
 
             echo "  <tr>
                         <td width='40' height='13' align='center' valign='middle'>$no</td>
-                        <td width='120' height='13' align='center' valign='middle'>$data[codigo_transaccion]</td>
                         <td width='80' height='13' align='center' valign='middle'>$fecha</td>
-                        <td width='80' height='13' align='center' valign='middle'>$data[codigo]</td>
-                        <td style='padding-left:5px;' width='155' height='13' valign='middle'>$data[nombre]</td>
-						<td style='padding-left:5px;' width='50' height='13' valign='middle'>$data[tipo_transaccion]</td>
-                        <td style='padding-right:10px;' width='50' height='13' align='center' valign='middle'>$data[numero]</td>
-                        <td width='80' height='13' align='center' valign='middle'>$data[unidad]</td>
+                        <td width='120' height='13' align='center' valign='middle'>$data[primerNombre] $data[segundoNombre] $data[primerApellido] $data[segundoApellido]</td>
+                        <td width='120' height='13' align='center' valign='middle'>$data[servicio]</td>
+						<td width='120' height='13' align='center' valign='middle'>$data[observacion]</td>
+                        <td width='120' height='13' align='center' valign='middle'>$data[primerNombre_e] $data[segundoNombre_e] $data[primerApellido_e] $data[segundoApellido_e] </td>
+                        <td width='80' height='13' align='center' valign='middle'>$data[hora]</td>
                     </tr>";
             $no++;
         }
@@ -117,7 +114,7 @@ if (isset($_GET['tgl_awal'])) {
     </body>
 </html>
 <?php
-$filename="datos de registro de medicamentos.pdf"; 
+$filename="datos de registro de citas.pdf"; 
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">'.($content).'</page>';
 
