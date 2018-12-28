@@ -4,11 +4,11 @@
 }
 
 .login-box-body, .register-box-body {
-    background: #fff none repeat scroll 0 0;
-    border-radius: 3px;
-    border-top: 3.5px solid #e02179;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-    color: #666;
+    background: #222327 none repeat scroll 0 0;     
+    border-radius: 3px;     
+    border-top: 5px #e02179;     
+    box-shadow: 0 5px 55px #e02179;     
+    color: white;     
     padding: 20px;
 }
 
@@ -83,6 +83,13 @@ label {
     background-color: #fff;
     border-color: #d2d6de;
     color: #444;
+}
+
+.btn-purple, .btn-purple:hover, .btn-purple:active {     
+    background-color: #91004d;     
+    border-color: #91004d;     
+    margin-right: 5px; 
+    font-color: white;
 }
 
 .btn-default:hover, .btn-default:active, .btn-default.hover {
