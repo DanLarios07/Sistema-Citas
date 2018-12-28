@@ -68,7 +68,7 @@
           <br/>
           <div class="row">
             <div class="col-xs-12">
-              <input type="submit" class="btn btn-primary btn-lg btn-block btn-flat" name="login" value="Ingresar" />
+              <input type="submit" class="btn btn-purple btn-lg btn-block btn-flat " name="login" value="Ingresar" />
             </div><!-- /.col -->
           </div>
         </form>

@@ -99,7 +99,7 @@ body {
 .content-wrapper,
 .right-side {
   min-height: 100%;
-  background-color: #ecf0f5;
+  background-color: #222327;
   z-index: 800;
 }
 .main-footer {
@@ -2755,11 +2755,11 @@ table.text-center th {
 }
 .login-box-body,
 .register-box-body {
-  background: #fff;
+  background: #222327;
   padding: 20px;
-  color: #444;
+  color: #e02179;
   border-top: 0;
-  color: #666;
+  color: #e02179;
 }
 .login-box-body .form-control-feedback,
 .register-box-body .form-control-feedback {
