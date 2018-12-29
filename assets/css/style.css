@@ -89,7 +89,7 @@ label {
     background-color: #91004d;     
     border-color: #91004d;     
     margin-right: 5px; 
-    font-color: white;
+    text-color: white;
 }
 
 .btn-default:hover, .btn-default:active, .btn-default.hover {
@@ -193,7 +193,7 @@ label {
 
 body {
     background-color: #fff;
-    color: white;
+    color: black;
     font-size: 15px;
     line-height: 1.42857;
 }

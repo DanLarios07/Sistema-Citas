@@ -1,13 +1,8 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
-  <h1>
-    <i class="fa fa-file-text-o icon-title"></i>Informe de datos de registro de clientes
+  <h1 style="color:white;">
+    <i class="fa fa-file-text-o icon-title" style="color:white;"></i>Informe de datos de registro de clientes
   </h1>
-  <ol class="breadcrumb">
-    <li><a href="?module=start"><i class="fa fa-home"></i> Inicio</a></li>
-    <li class="active">informe</li>
-    <li class="active"> Reporte de Clientes</li>
-  </ol>
 </section>
 
 <!-- Main content -->

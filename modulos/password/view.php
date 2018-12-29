@@ -1,12 +1,7 @@
 <section class="content-header">
-  <h1>
-    <i class="fa fa-lock icon-title"></i> Modificar Contraseña
+  <h1 style="color:white;">
+    <i class="fa fa-lock icon-title" style="color:white;"></i> Modificar Contraseña
   </h1>
-  <ol class="breadcrumb">
-    <li><a href="?module=start"><i class="fa fa-home"></i> Inicio</a></li>
-    <li class="active">Contraseña</li>
-    <li class="active">Modificar</li>
-  </ol>
 </section>
 
 <!-- Main content -->

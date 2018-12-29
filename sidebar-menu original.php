@@ -92,7 +92,7 @@ if ($_GET["module"]=="mod_empleados" || $_GET["module"]=="form_mod_empleados") {
             	<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
           	</a>
       		<ul class="treeview-menu">
-        		<li><a href="?module=stock_reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
+        		<li><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
         		<li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
       		</ul>
     	</li>
@@ -314,7 +314,7 @@ if ($_SESSION['permisos_acceso']=='Gerente') { ?>
               <i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
           <ul class="treeview-menu">
-            <li><a href="?module=stock_reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
+            <li><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
             <li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
           </ul>
       </li>

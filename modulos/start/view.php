@@ -1,11 +1,8 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
-    <h1>
-      <i class="fa fa-home icon-title"></i> Inicio
+    <h1 style="color:white;">
+      <i class="fa fa-home icon-title" style="color:white;"></i> Inicio
     </h1>
-    <ol class="breadcrumb">
-      <li><a href="?module=beranda"><i class="fa fa-home"></i> Inicio</a></li>
-    </ol>
   </section>
   
   <!-- Main content -->
@@ -15,7 +12,7 @@
         <div class="alert alert-info alert-dismissable">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
           <p style="font-size:15px">
-            <i class="icon fa fa-user"></i> Bienvenido <strong><?php echo $_SESSION['name_user']; ?></strong> a la aplicación de inventario de medicamentos.
+            <i class="icon fa fa-user"></i> Bienvenido <strong><?php echo $_SESSION['name_user']; ?></strong> al sistema.
           </p>        
         </div>
       </div>  
