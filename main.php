@@ -137,10 +137,6 @@ session_start();
 
       </div><!-- /.content-wrapper -->
 
-      <footer class="main-footer">
-        <strong>I LOVE MAKEUP STUDIO</a>.</strong>
-      </footer>
-    </div><!-- ./wrapper -->
 
     <!-- jQuery -->
     <script src="assets/plugins/jQuery/jQuery-2.1.3.min.js"></script>
