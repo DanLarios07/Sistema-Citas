@@ -114,7 +114,7 @@ if (isset($_SESSION['id_user'])) {
           <div class="box-footer">
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
-                <input type="submit" class="btn btn-primary btn-submit" name="Modificar" value="Modificar">
+                <input type="submit" class="btn btn-purple btn-submit" name="Modificar" value="Modificar" style="color:white;">
               </div>
             </div>
           </div><!-- /.box footer -->

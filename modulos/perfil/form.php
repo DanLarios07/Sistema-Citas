@@ -9,14 +9,9 @@ if (isset($_POST['id_user'])) {
 ?>
 
   <section class="content-header">
-    <h1>
-      <i class="fa fa-edit icon-title"></i> Modificar Perfil de Usuario
+    <h1 style="color:white;">
+      <i class="fa fa-edit icon-title" style="color:white;"></i> Modificar Perfil de Usuario
     </h1>
-    <ol class="breadcrumb">
-      <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=perfil"> Perfil de usuario </a></li>
-      <li class="active"> Modificar </li>
-    </ol>
   </section>
 
   <!-- Main content -->
@@ -80,7 +75,7 @@ if (isset($_POST['id_user'])) {
             <div class="box-footer">
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                  <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
+                  <input type="submit" class="btn btn-purple btn-submit" name="Guardar" value="Guardar" style="color:white;">
                   <a href="?module=perfil" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
