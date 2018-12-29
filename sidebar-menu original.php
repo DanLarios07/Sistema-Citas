@@ -1,6 +1,6 @@
 <?php 
 
-if ($_SESSION['permisos_acceso']=='Super Admin') { ?>
+if ($_SESSION['permisos_acceso']=='Super Usuario') { ?>
 
     <ul class="sidebar-menu">
         <li class="header">MENU</li>

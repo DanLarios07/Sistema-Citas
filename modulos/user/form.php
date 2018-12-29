@@ -44,9 +44,8 @@ if ($_GET['form']=='add') { ?>
                 <div class="col-sm-5">
                   <select class="form-control" name="permisos_acceso" required>
                     <option value=""></option>
-                    <option value="Super Admin">Super Admin</option>
-                    <option value="Gerente">Gerente</option>
-                    <option value="Almacen">Almacén</option>
+                    <option value="Super Usuario">Super Usuario</option>
+                    <option value="Asistente">Asistente</option>
                   </select>
                 </div>
               </div>
@@ -147,9 +146,8 @@ elseif ($_GET['form']=='edit') {
                 <div class="col-sm-5">
                   <select class="form-control" name="permisos_acceso" required>
                     <option value="<?php echo $data['permisos_acceso']; ?>"><?php echo $data['permisos_acceso']; ?></option>
-                    <option value="Super Admin">Super Admin</option>
-                    <option value="Gerente">Gerente</option>
-                    <option value="Almacen">Almacén</option>
+                    <option value="Super Usuario">Super Usuario</option>
+                    <option value="Asistente">Asistente</option>
                   </select>
                 </div>
               </div>

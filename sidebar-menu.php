@@ -1,6 +1,6 @@
 <?php 
 
-if ($_SESSION['permisos_acceso']=='Super Admin') { ?>
+if ($_SESSION['permisos_acceso']=='Super Usuario') { ?>
 
     <ul class="sidebar-menu">
         <li class="header">MENU</li>
@@ -134,84 +134,7 @@ if ($_SESSION['permisos_acceso']=='Super Admin') { ?>
 <?php
 }
 
-elseif ($_SESSION['permisos_acceso']=='Empleado') { ?>
-	<!-- sidebar menu start -->
-    <ul class="sidebar-menu">
-        <li class="header">MENU</li>
-
-	<?php 
-
-	if ($_GET["module"]=="start") { ?>
-		<li class="active">
-			<a href="?module=start"><i class="fa fa-home"></i> Inicio </a>
-	  	</li>
-	<?php
-	}
-
-	else { ?>
-		<li>
-			<a href="?module=start"><i class="fa fa-home"></i> Inicio </a>
-	  	</li>
-	<?php
-	}
-
-
-  if ($_GET["module"]=="reporte_2") { ?>
-		<li class="active treeview">
-          	<a href="javascript:void(0);">
-            	<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
-          	</a>
-      		<ul class="treeview-menu">
-        		<li class="active"><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
-        		<li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas</a></li>
-      		</ul>
-    	</li>
-    <?php
-	}
-
-	elseif ($_GET["module"]=="stock_reporte") { ?>
-		<li class="active treeview">
-          	<a href="javascript:void(0);">
-            	<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
-          	</a>
-      		<ul class="treeview-menu">
-        		<li><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
-        		<li class="active"><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
-      		</ul>
-    	</li>
-    <?php
-	}
-
-	else { ?>
-		<li class="treeview">
-          	<a href="javascript:void(0);">
-            	<i class="fa fa-file-text"></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
-          	</a>
-      		<ul class="treeview-menu">
-        		<li><a href="?module=reporte_2"><i class="fa fa-circle-o"></i> Reporte de Clientes </a></li>
-        		<li><a href="?module=stock_reporte"><i class="fa fa-circle-o"></i> Reporte de Citas </a></li>
-      		</ul>
-    	</li>
-    <?php
-	}
-
-	if ($_GET["module"]=="password") { ?>
-		<li class="active">
-			<a href="?module=password"><i class="fa fa-lock"></i> Cambiar contraseña</a>
-		</li>
-	<?php
-	}
-	else { ?>
-		<li>
-			<a href="?module=password"><i class="fa fa-lock"></i> Cambiar contraseña</a>
-		</li>
-	<?php
-	}
-	?>
-	</ul>
-<?php
-}
-if ($_SESSION['permisos_acceso']=='Gerente') { ?>
+if ($_SESSION['permisos_acceso']=='Asistente') { ?>
 
     <ul class="sidebar-menu">
         <li class="header">MENU</li>
