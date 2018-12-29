@@ -71,7 +71,7 @@
           <div class="box-footer bg-btn-action">
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
-                <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
+                <input type="submit" class="btn btn-purple btn-submit" name="Guardar" value="Guardar">
               </div>
             </div>
           </div>

@@ -5,14 +5,9 @@
 if ($_GET['form']=='add') { ?>
 
   <section class="content-header">
-    <h1>
-      <i class="fa fa-edit icon-title"></i> Agregar Usuario
+    <h1 style="color:white;">
+      <i class="fa fa-edit icon-title" style="color:white;"></i> Agregar Usuario
     </h1>
-    <ol class="breadcrumb">
-      <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=user"> Usuario </a></li>
-      <li class="active"> agregar </li>
-    </ol>
   </section>
 
   <section class="content">
@@ -60,7 +55,7 @@ if ($_GET['form']=='add') { ?>
             <div class="box-footer">
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                  <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
+                  <input type="submit" class="btn btn-purple btn-submit" name="Guardar" value="Guardar">
                   <a href="?module=user" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
@@ -83,14 +78,9 @@ elseif ($_GET['form']=='edit') {
 ?>
 
   <section class="content-header">
-    <h1>
-      <i class="fa fa-edit icon-title"></i> Modificar datos de Usuario
+    <h1 style="color:white;">
+      <i class="fa fa-edit icon-title" style="color:white;"></i> Modificar datos de Usuario
     </h1>
-    <ol class="breadcrumb">
-      <li><a href="?module=beranda"><i class="fa fa-home"></i> Inicio</a></li>
-      <li><a href="?module=user"> Usuario </a></li>
-      <li class="active"> Modificar </li>
-    </ol>
   </section>
 
   <!-- Main content -->
@@ -168,7 +158,7 @@ elseif ($_GET['form']=='edit') {
             <div class="box-footer">
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                  <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
+                  <input type="submit" class="btn btn-purple btn-submit" name="Guardar" value="Guardar">
                   <a href="?module=user" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>

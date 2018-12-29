@@ -58,7 +58,7 @@
                 <th class="center">Primer Apellido</th>
                 <th class="center">Segundo Apellido</th>
                 <th class="center">Telefono</th>
-                <th></th>
+                <th class="center">Opciones</th>
               </tr>
             </thead>
             <tbody>

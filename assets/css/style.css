@@ -173,7 +173,8 @@ label {
 	width: 100px;
 	margin-top: 7px;
 	margin-right: 10px;
-	font-size: 15px;
+    font-size: 15px;
+    color:#fff;
 }
 
 .btn-reset{

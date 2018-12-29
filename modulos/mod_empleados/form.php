@@ -3,14 +3,9 @@
 if ($_GET['form']=='add') { ?> 
 <!-- ESTA PARTE SON LOS BREADCRUMBS -->
   <section class="content-header">
-    <h1>
-      <i class="fa fa-edit icon-title"></i> Agregar Empleado
+    <h1 style="color:white;">
+      <i class="fa fa-edit icon-title" style="color:white;"></i> Agregar Empleado
     </h1>
-    <ol class="breadcrumb">
-      <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=mod_empleados">  </a></li>
-      <li class="active"> Más </li>
-    </ol>
   </section>
 
   <!-- Main content -->
@@ -104,7 +99,7 @@ if ($_GET['form']=='add') { ?>
             <div class="box-footer">
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                  <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
+                  <input type="submit" class="btn btn-purple btn-submit" name="Guardar" value="Guardar" style="color:white;">
                   <a href="?module=mod_empleados" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>
@@ -127,14 +122,9 @@ elseif ($_GET['form']=='edit') {
 ?>
 
   <section class="content-header">
-    <h1>
-      <i class="fa fa-edit icon-title"></i> Modificar Cliente
+    <h1 style="color:white;">
+      <i class="fa fa-edit icon-title" style="color:white;"></i> Modificar Cliente
     </h1>
-    <ol class="breadcrumb">
-      <li><a href="?module=start"><i class="fa fa-home"></i> Inicio </a></li>
-      <li><a href="?module=mod_empleados"> Empleados </a></li>
-      <li class="active"> Modificar </li>
-    </ol>
   </section>
 
   <!-- Main content -->
@@ -207,7 +197,7 @@ elseif ($_GET['form']=='edit') {
             <div class="box-footer">
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                  <input type="submit" class="btn btn-primary btn-submit" name="Guardar" value="Guardar">
+                  <input type="submit" class="btn btn-purple btn-submit" name="Guardar" value="Guardar" style="color:white;">
                   <a href="?module=mod_empleados" class="btn btn-default btn-reset">Cancelar</a>
                 </div>
               </div>

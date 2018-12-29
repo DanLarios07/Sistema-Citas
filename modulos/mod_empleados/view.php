@@ -2,7 +2,7 @@
   <h1 style="color:white;">
     <i class="fa fa-folder-o icon-title" style="color:white;"></i> Datos de Empleados
 
-    <a class="btn btn-primary btn-social pull-right" href="?module=form_mod_empleados&form=add" title="agregar" data-toggle="tooltip" style="color:white;">
+    <a class="btn btn-purple btn-social pull-right" href="?module=form_mod_empleados&form=add" title="agregar" data-toggle="tooltip" style="color:white;">
       <i class="fa fa-plus"></i> Agregar Empleado
     </a>
   </h1>
@@ -60,7 +60,7 @@
                 <th class="center">Telefono</th>
                 <th class="center">Identidad</th>
                 <th class="center">Correo Electronico</th>
-                <th></th>
+                <th class="center">Opciones</th>
               </tr>
             </thead>
             <tbody>

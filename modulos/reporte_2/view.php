@@ -32,7 +32,7 @@
           <div class="box-footer">
             <div class="form-group">
               <div class="col-sm-offset-1 col-sm-11">
-                <button type="submit" class="btn btn-primary btn-social btn-submit" style="width: 120px;">
+                <button type="submit" class="btn btn-purple btn-social btn-submit" style="width: 120px;">
                   <i class="fa fa-print"></i> Imprimir
                 </button>
               </div>
