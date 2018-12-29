@@ -61,7 +61,7 @@ if ($_GET['form']=='add') { ?>
                   <input type="time" class="form-control time" name="hora" autocomplete="off" value="<?php echo $data['hora']; ?>" required>
                 </div>
               </div>
-              
+
               <div class="form-group">  
                 <label class="col-sm-2 control-label">Cliente</label>
                 <div class="col-sm-5">
@@ -79,28 +79,12 @@ if ($_GET['form']=='add') { ?>
                 </div>
               </div>
               
-              
-              <div class="form-group">  
-                <label class="col-sm-2 control-label">Empleado</label>
-                <div class="col-sm-5">
-                  <select class="chosen-select" name="codigo_empleado" data-placeholder="-- Seleccionar Empleado --" onchange="tampil_obat(this)" autocomplete="off" required>
-                    <option value=""></option>
-
-                    <?php
-                      $query_obat = mysqli_query($mysqli, "SELECT codigo_empleado, primerNombre_e, primerApellido_e, segundoApellido_e FROM empleados ORDER BY primerNombre_e ASC")
-                                                            or die('error '.mysqli_error($mysqli));
-                      while ($data_obat = mysqli_fetch_assoc($query_obat)) {
-                        echo"<option value=\"$data_obat[codigo_empleado]\"> $data_obat[codigo_empleado] | $data_obat[primerNombre_e] $data_obat[primerApellido_e] $data_obat[segundoApellido_e] </option>";
-                      }
-                    ?>
-                  </select>
-                </div>
               </div>
               
               <div class="form-group">
                 <label class="col-sm-2 control-label">Observacion</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" id="jumlah_masuk" name="observacion" autocomplete="off" required>
+                  <input type="text" class="form-control" id="jumlah_masuk" name="observacion" autocomplete="off" >
                 </div>
               </div>
 			  
