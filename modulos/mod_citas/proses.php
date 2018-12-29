@@ -18,17 +18,17 @@ else {
 			$fecha         = mysqli_real_escape_string($mysqli, trim($_POST['fecha_a']));
             $exp             = explode('-',$fecha);
             $fecha_a   = $exp[2]."-".$exp[1]."-".$exp[0];
-            
+            $hora   = mysqli_real_escape_string($mysqli, trim($_POST['hora']));
             $codigo_cliente       = mysqli_real_escape_string($mysqli, trim($_POST['codigo_cliente']));
             $codigo_empleado      = mysqli_real_escape_string($mysqli, trim($_POST['codigo_empleado']));
             $observacion   = mysqli_real_escape_string($mysqli, trim($_POST['observacion']));
             $created_user    = $_SESSION['id_user'];
             $estado_cita= mysqli_real_escape_string($mysqli, trim($_POST['estado_cita']));
             $servicio   = mysqli_real_escape_string($mysqli, trim($_POST['servicio']));
-            $hora   = mysqli_real_escape_string($mysqli, trim($_POST['hora']));
+            
 
           
-            $query = mysqli_query($mysqli, "INSERT INTO citas(codigo_cita,fecha,codigo_cliente,codigo_empleado,observacion,created_user,estado_cita,servicio) 
+            $query = mysqli_query($mysqli, "INSERT INTO citas(codigo_cita,fecha,codigo_cliente,codigo_empleado,observacion,created_user,estado_cita,servicio,hora) 
                                             VALUES('$codigo_cita','$fecha_a','$codigo_cliente','$codigo_empleado','$observacion','$created_user','$estado_cita','$servicio', '$hora')")
                                             or die('Error: '.mysqli_error($mysqli));    
 
@@ -46,6 +46,7 @@ else {
         
                 $codigo_cita = mysqli_real_escape_string($mysqli, trim($_POST['codigo_cita']));
 			$fecha         = mysqli_real_escape_string($mysqli, trim($_POST['fecha_a']));
+            $hora   = mysqli_real_escape_string($mysqli, trim($_POST['hora']));
             $exp             = explode('-',$fecha);
             $fecha_a   = $exp[2]."-".$exp[1]."-".$exp[0];
             $codigo_cliente       = mysqli_real_escape_string($mysqli, trim($_POST['codigo_cliente']));
@@ -53,7 +54,7 @@ else {
             $observacion   = mysqli_real_escape_string($mysqli, trim($_POST['observacion']));
             $estado_cita= mysqli_real_escape_string($mysqli, trim($_POST['estado_cita']));
             $servicio   = mysqli_real_escape_string($mysqli, trim($_POST['servicio']));
-            $hora   = mysqli_real_escape_string($mysqli, trim($_POST['hora']));
+            
 
 
                 $query = mysqli_query($mysqli, "UPDATE citas SET codigo_cita       = '$codigo_cita',

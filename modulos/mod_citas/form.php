@@ -55,6 +55,13 @@ if ($_GET['form']=='add') { ?>
 
               <hr>
 
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Hora</label>
+                <div class="col-sm-5">
+                  <input type="time" class="form-control time" name="hora" autocomplete="off" value="<?php echo $data['hora']; ?>" required>
+                </div>
+              </div>
+              
               <div class="form-group">  
                 <label class="col-sm-2 control-label">Cliente</label>
                 <div class="col-sm-5">
@@ -149,7 +156,7 @@ elseif ($_GET['form']=='edit') {
 
   <section class="content-header">
     <h1 style="color:white;">
-      <i class="fa fa-edit icon-title" style="color:white;"></i> Modificar Cliente
+      <i class="fa fa-edit icon-title" style="color:white;"></i> Modificar Cita
     </h1>
   </section>
 
@@ -226,7 +233,7 @@ elseif ($_GET['form']=='edit') {
               <div class="form-group">
                 <label class="col-sm-2 control-label">Observacion</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" id="jumlah_masuk" name="observacion" value="<?php echo $data['observacion']; ?>" autocomplete="off" required>
+                  <input type="text" class="form-control" id="jumlah_masuk" name="observacion" value="<?php echo $data['observacion']; ?>">
                 </div>
               </div>
 			  
