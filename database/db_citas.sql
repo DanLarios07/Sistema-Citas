@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-12-2018 a las 07:00:58
+-- Tiempo de generación: 29-12-2018 a las 07:08:31
 -- Versión del servidor: 10.1.24-MariaDB
 -- Versión de PHP: 7.1.6
 
@@ -21,6 +21,89 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `db_citas`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `citas`
+--
+
+CREATE TABLE `citas` (
+  `codigo_cita` varchar(15) NOT NULL,
+  `fecha` date NOT NULL,
+  `observacion` varchar(150) NOT NULL,
+  `codigo_cliente` varchar(7) NOT NULL,
+  `codigo_empleado` varchar(7) NOT NULL,
+  `created_user` int(3) NOT NULL,
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `estado_cita` enum('Pendiente','Atendida') NOT NULL,
+  `servicio` varchar(100) DEFAULT NULL,
+  `hora` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `citas`
+--
+
+INSERT INTO `citas` (`codigo_cita`, `fecha`, `observacion`, `codigo_cliente`, `codigo_empleado`, `created_user`, `created_date`, `estado_cita`, `servicio`, `hora`) VALUES
+('TM-2018-0000002', '2018-12-23', '', 'C000362', 'E000361', 1, '2018-12-29 05:16:25', 'Pendiente', 'Corte de cabello', '19:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `codigo_cliente` varchar(7) NOT NULL,
+  `primerNombre` varchar(50) NOT NULL,
+  `segundoNombre` varchar(50) NOT NULL,
+  `primerApellido` varchar(50) NOT NULL,
+  `segundoApellido` varchar(50) NOT NULL,
+  `telefono` int(8) NOT NULL,
+  `created_user` int(3) NOT NULL,
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_user` int(3) NOT NULL,
+  `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`codigo_cliente`, `primerNombre`, `segundoNombre`, `primerApellido`, `segundoApellido`, `telefono`, `created_user`, `created_date`, `updated_user`, `updated_date`) VALUES
+('C000361', 'Gina', 'Maria', 'Jerezano', 'Andino', 88546743, 1, '2018-07-24 22:43:20', 4, '2018-12-23 02:51:16'),
+('C000362', 'Grazzia', 'Maria', 'Garcia', 'Mejia', 98546321, 1, '2018-07-24 22:56:58', 1, '2018-07-26 08:09:28'),
+('C000363', 'Andrea', 'Celeste', 'Portillo', 'Guzman', 33815467, 1, '2018-10-01 06:12:32', 1, '2018-10-01 07:45:32'),
+('C000364', 'Daniela', 'Isabel', 'Estevez', 'Gonzales', 95910341, 1, '2018-10-30 21:39:54', 1, '2018-11-27 06:30:12');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `empleados`
+--
+
+CREATE TABLE `empleados` (
+  `codigo_empleado` varchar(7) NOT NULL,
+  `primerNombre_e` varchar(50) NOT NULL,
+  `segundoNombre_e` varchar(50) NOT NULL,
+  `primerApellido_e` varchar(50) NOT NULL,
+  `segundoApellido_e` varchar(50) NOT NULL,
+  `telefono_e` int(8) NOT NULL,
+  `identidad` varchar(15) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `created_user` int(3) NOT NULL,
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_user` int(3) NOT NULL,
+  `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `empleados`
+--
+
+INSERT INTO `empleados` (`codigo_empleado`, `primerNombre_e`, `segundoNombre_e`, `primerApellido_e`, `segundoApellido_e`, `telefono_e`, `identidad`, `email`, `created_user`, `created_date`, `updated_user`, `updated_date`) VALUES
+('E000361', 'Andrea', 'Nicolle', 'Valladares', 'Aguilar', 88546791, '0801-1997-01283', 'nicolle-makeup@gmail.com', 1, '2018-07-24 22:43:20', 4, '2018-12-23 02:50:59');
 
 -- --------------------------------------------------------
 
@@ -58,6 +141,31 @@ INSERT INTO `usuarios` (`id_user`, `username`, `name_user`, `password`, `email`,
 --
 
 --
+-- Indices de la tabla `citas`
+--
+ALTER TABLE `citas`
+  ADD PRIMARY KEY (`codigo_cita`),
+  ADD KEY `codigo_cliente` (`codigo_cliente`),
+  ADD KEY `codigo_empleado` (`codigo_empleado`),
+  ADD KEY `created_user` (`created_user`);
+
+--
+-- Indices de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`codigo_cliente`),
+  ADD KEY `created_user` (`created_user`),
+  ADD KEY `updated_user` (`updated_user`);
+
+--
+-- Indices de la tabla `empleados`
+--
+ALTER TABLE `empleados`
+  ADD PRIMARY KEY (`codigo_empleado`),
+  ADD KEY `created_user` (`created_user`),
+  ADD KEY `updated_user` (`updated_user`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -72,7 +180,33 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_user` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;COMMIT;
+  MODIFY `id_user` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `citas`
+--
+ALTER TABLE `citas`
+  ADD CONSTRAINT `citas_ibfk_1` FOREIGN KEY (`codigo_cliente`) REFERENCES `clientes` (`codigo_cliente`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `citas_ibfk_2` FOREIGN KEY (`codigo_empleado`) REFERENCES `empleados` (`codigo_empleado`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `citas_ibfk_3` FOREIGN KEY (`created_user`) REFERENCES `usuarios` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`created_user`) REFERENCES `usuarios` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `clientes_ibfk_2` FOREIGN KEY (`updated_user`) REFERENCES `usuarios` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `empleados`
+--
+ALTER TABLE `empleados`
+  ADD CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`created_user`) REFERENCES `usuarios` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `empleados_ibfk_2` FOREIGN KEY (`updated_user`) REFERENCES `usuarios` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
