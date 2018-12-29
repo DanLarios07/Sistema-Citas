@@ -83,7 +83,7 @@ session_start();
       <header class="main-header">
         <!-- Logo -->
         <a href="?module=start" class="logo">
-          <img style="margin-top:-5px;margin-right:5px" src="assets/img/logo.png" alt="Logo"> 
+          <img style="margin-top:-5px;margin-right:5px" src="assets/img/logo1.png" alt="Logo"> 
         </a>
 
         <nav class="navbar navbar-static-top" role="navigation">
