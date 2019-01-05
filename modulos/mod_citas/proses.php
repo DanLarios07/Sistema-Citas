@@ -18,13 +18,13 @@ else {
 			$fecha         = mysqli_real_escape_string($mysqli, trim($_POST['fecha_a']));
             $exp             = explode('-',$fecha);
             $fecha_a   = $exp[2]."-".$exp[1]."-".$exp[0];
-            $hora   = mysqli_real_escape_string($mysqli, trim($_POST['hora']));
             $codigo_cliente       = mysqli_real_escape_string($mysqli, trim($_POST['codigo_cliente']));
             $codigo_empleado      = mysqli_real_escape_string($mysqli, trim($_POST['codigo_empleado']));
             $observacion   = mysqli_real_escape_string($mysqli, trim($_POST['observacion']));
             $created_user    = $_SESSION['id_user'];
             $estado_cita= mysqli_real_escape_string($mysqli, trim($_POST['estado_cita']));
             $servicio   = mysqli_real_escape_string($mysqli, trim($_POST['servicio']));
+             $hora   = mysqli_real_escape_string($mysqli, trim($_POST['hora']));
             
 
           
